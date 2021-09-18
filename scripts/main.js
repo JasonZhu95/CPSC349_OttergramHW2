@@ -36,7 +36,7 @@ function setDetailsFromThumb(thumbnail) {
 
 function addThumbClickHandler(thumb) {
     'use strict';
-    thumb.addEventListener('click', function(event) {
+    thumb.addEventListener('click', function (event) {
         event.preventDefault();
         setDetailsFromThumb(thumb);
         showDetails();
@@ -70,7 +70,9 @@ function addKeyPressHandler() {
     document.body.addEventListener('keyup', function (event) {
         event.preventDefault();
         console.log(event.keyCode);
-        if (event.keyCode === ESC_KEY) { hideDetails(); }
+        if (event.keyCode === ESC_KEY) {
+            hideDetails();
+        }
     });
 }
 
@@ -85,8 +87,7 @@ function initializeEvents() {
 function previousImage() {
     var thumbnails = getThumbnailsArray();
     var index = thumbnails.indexOf(currentThumbnail);
-    if (index > 0)
-    {
+    if (index > 0) {
         setDetailsFromThumb(thumbnails[index - 1]);
     }
 }
@@ -94,8 +95,7 @@ function previousImage() {
 function nextImage() {
     var thumbnails = getThumbnailsArray();
     var index = thumbnails.indexOf(currentThumbnail);
-    if (index < thumbnails.length - 1)
-    {
+    if (index < thumbnails.length - 1) {
         setDetailsFromThumb(thumbnails[index + 1]);
     }
 }
